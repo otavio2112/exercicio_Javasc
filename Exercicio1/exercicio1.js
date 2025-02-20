@@ -227,4 +227,12 @@ function mostrarResultadoCalculadora() {
 };
 
 // 23-)
-function mostrarResultadoSenha
+function mostrarResultadoSenha() {
+    var senha = "O1234567";
+    var temMaiscula = false;
+    var temNumero = false;
+
+    if (senha.lenght >= 8){
+        alert("Senha válida")
+    }
+}
