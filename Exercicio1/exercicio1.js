@@ -180,12 +180,17 @@ function mostrarTemperatura() {
 
 // 18-)
 function mostrarValorFinalCompra() {
-    var precoProduto = 100;
+    var precoProduto = 157;
     var porcentDesconto = 0.10;
     var valorDesconto = precoProduto * porcentDesconto;
-    var valorFinal = precoProduto - valorDesconto;
+    if (precoProduto > 100) {
+        valorFinal = precoProduto - valorDesconto;
+    }
+    else {
+        valorFinal = precoProduto;
+    }
 
-    alert("O valor final do produto após o desconto é igual a: R$ " + valorFinal)
+    alert("O valor final do produto após o desconto é igual a: R$ " + valorFinal + ",00")
 };
 
 // 19-)
@@ -212,7 +217,7 @@ function mostrarResultadoIntervalo() {
 
 // 21-)
 function mostrarAnoBissexto() {
-    var ano = 2054;
+    var ano = Number(prompt("Digite o ano: "));
     if (ano % 4 == 0) {
         alert("O ano " + ano + " é bissexto")
     }
@@ -223,16 +228,182 @@ function mostrarAnoBissexto() {
 
 // 22-)
 function mostrarResultadoCalculadora() {
+    var numero1 = Number(prompt("Digite o primeiro número: "));
+    var operador = prompt("Digite o operador: ");
+    var numero2 = Number(prompt("Digite o segundo número: "));
 
+    console.log(numero1, operador, numero2);
+    var resultado;
+
+    if (operador == "+") {
+        resultado = numero1 + numero2;
+        // console.log(typeof operador);
+    }
+    else if (operador == "-") {
+        resultado = numero1 - numero2; 
+    }
+    else if (operador == "*") {
+        resultado = numero1 * numero2;
+    }
+    else if (operador == "/") {
+        if (numero2 !==0) {
+            resultado = numero1 / numero2;
+        }
+        else {
+            alert("Erro: divisão por zero")
+        }
+    }
+    else{
+        alert("Este operador é inválido");
+    }
+     alert("O resultado da conta é igual a: " + resultado);
 };
 
 // 23-)
 function mostrarResultadoSenha() {
-    var senha = "O1234567";
+    var senha = prompt("Digite a senha: ");
     var temMaiscula = false;
     var temNumero = false;
 
     if (senha.lenght >= 8){
         alert("Senha válida")
     }
+};
+
+// 24-)
+function mostrarTipoTriangulo() {
+    var lado1 = Number(prompt("Digite a medida do 1° lado: "));
+    var lado2 = Number(prompt("Digite a medida do 2° lado: "));
+    var lado3 = Number(prompt("Digite a medida do 3° lado: "));
+
+    if ((lado1 === lado2) && (lado1  === lado3)) {
+        alert("Este triângulo é equilátero")
+    }
+    else if ((lado1 === lado2) || (lado1 === lado3) || (lado2 === lado3)) {
+        alert("Este triângulo é isósceles")
+    }
+    else {
+        alert("Este triângulo é escaleno")
+    }
+};
+
+// 25-)
+function mostrarClassificacaoIMC() {
+    var peso = Number(prompt("Informe seu peso: "));
+    var altura = Number(prompt("Informe sua altura: "));
+    var imc = peso / (altura * altura);
+
+    if (imc < 18.5) {
+        alert("Você está abaixo do peso")
+    }
+    else if (18.5 <= imc && imc < 24.9) {
+        alert("Você está no peso adequado")
+    }
+    else if (25 <= imc && imc < 29.9) {
+        alert("Você está acima do peso: Obesidade I")
+    }
+    else if (30 <= imc && imc < 39.9) {
+        alert("Você está acima do peso: Obesidade II")
+    }
+    else {
+        alert("Você está acima do peso: Obesidade III")
+    }
+
+    alert("Seu IMC é igual a: " + imc.toFixed(2))
+};
+
+
+// NÍVEL AVANÇADO:
+
+// 26-)
+function  mostrarNumerosOrdenados() {
+    numero1 = Number(prompt("Informe o 1° número: "));
+    numero2 = Number(prompt("Informe o 2° número: "));
+    numero3 = Number(prompt("Informe o 3° número: "));
+
+    
+    if (numero2 < numero3 && numero3 < numero1) {
+        alert("A ordem de forma crescente é igual a: " + numero2 + ", " + numero3 + ", " + numero1)
+    }
+    else if (numero3 < numero2 && numero2 < numero1) {
+        alert("A ordem de forma crescente é igual a: " + numero3 + ", " + numero2 + ", " + numero1)
+    }
+    else if (numero3 < numero1 && numero1 < numero2) {
+        alert("A ordem de forma crescente é igual a: " + numero3 + ", " + numero1 + ", " + numero2)
+    }
+    else if (numero1 < numero3 && numero3 < numero2) {
+        alert("A ordem de forma crescente é igual a: " + numero1 + ", " + numero3 + ", " + numero2)
+    }
+    else if (numero1 < numero2 && numero2 < numero3) {
+        alert("A ordem de forma crescente é igual a: " + numero1 + ", " + numero2 + ", " + numero3)
+    }
+    else if (numero2 < numero1 && numero1 < numero3) {
+        alert("A ordem de forma crescente é igual a: " + numero2 + ", " + numero1 + ", " + numero3)
+    }
+};
+
+// 27-)
+function mostrarRaízes() {
+    var a = Number(prompt("Informe o valor de a: "));
+    var b = Number(prompt("Informe o valor de b: "));
+    var c = Number(prompt("Informe o valor de c: "));
+
+    var delta = ((b * b) - 4 * a * c);
+    if (delta < 0) {
+        alert("Não há raízes reais, pois o delta é menor que 0")
+    }
+    else {
+        var raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+        var raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+    }
+    alert("Os valores das raízes são, respectivamente: " + raiz1 + " e " + raiz2)
+};
+
+// 28-)
+function mostrarAdvinhação() {
+var numeroSorteado = Math.floor(Math.random () * 100) + 1;
+var tentativas = 0;
+var chute;
+
+do {
+    chute = Number(prompt("Digite um número: "));
+    tentativas++;
+    if (chute > numeroSorteado) {
+        alert("Chute muito alto!")
+    }
+    else if(chute < numeroSorteado) {
+        alert("Chute muito baixo!")
+    }
 }
+
+while (chute !== numeroSorteado);
+
+alert("Parabéns!!!, você acertou o número em " + tentativas + " tentativas")
+};
+
+// 29-)
+function conversãoBases() {
+    var numero = Number(prompt("Digite um número: "));
+    var baseEscolhida = (prompt("Escolha a base desejada(1 para binário e 2 para hexadecimal): "));
+    
+    if (baseEscolhida == "1") {
+        alert("O número " + numero + " em binário é igual a: " + numero.toString(2))
+    }
+    else if (baseEscolhida == "2") {
+        alert("O número " + numero + " em hexadecimal é igual a: " + numero.toString(16))
+    }
+    else {
+        alert("Opção inválida")
+    }
+};    
+
+// 30-)
+function calculadoraJurosCompostos() {
+    var capital = Number(prompt("Informe o valor do capital: R$ "));
+    var taxaJuros = Number(prompt("Informe a taxa de juros do investimento: "));
+    var meses = Number(prompt("Inform o tempo do investimento, em meses: "));
+    
+    var montante = capital * Math.pow((1 + taxaJuros), meses);
+
+    alert("O montante final do investimento será igual a: R$ " + montante.toFixed(2))
+};
