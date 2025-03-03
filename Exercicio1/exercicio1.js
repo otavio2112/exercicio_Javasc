@@ -1,122 +1,142 @@
 // NÍVEL INICIANTE:
 
 // 1-)
-var numero1 = 20;
-var numero2 = 30;
-var soma = numero1 + numero2;
-console.log("O valor da soma é igual a: " + soma);
-
-
 function somatoria() {
+    var numero1 = Number(prompt("Digite o 1° número: "));
+    var numero2 = Number(prompt("Digite o 2° número: "));
+    var soma = numero1 + numero2;
+    
     alert("O valor da soma é igual a: " + soma)
 };
 
 // 2-)
-var valorInicial = 100;
-var desconto = 10;
-var valorFinal = valorInicial - desconto;
-console.log("A valor final do produto será igual a: R$ " + valorFinal);
-
 function subtracao() {
+    var valorInicial = Number(prompt("Digite o valor inicial do produto: "));
+    var desconto = Number(prompt("Digite o valor do desconto: "));
+    var valorFinal = valorInicial - desconto;
+
     alert("A valor final do produto será igual a: R$ " + valorFinal)
 };
 
 // 3-)
-var  lado = 10;
-var area = lado * lado;
-console.log("A área do quadrado é igual a: " + area)
-
 function multiplicacao() {
+    var  lado = Number(prompt("Digite o valor do lado do quadrado: "));
+    var area = lado * lado;
+
     alert("A área do quadrado é igual a: " + area)
 };
 
 // 4-)
-var valorConta = 500; 
-var numeroPessoas = 5;
-var divisao = valorConta % numeroPessoas;
-console.log("O valor da conta, dividido para cada pessoa da mesa é igual a: R$ " + divisao);
-
 function divisao() {
+    var valorConta = Number(prompt("Informe o valor da conta: ")); 
+    var numeroPessoas = Number(prompt("Informe o número de pessoas na mesa: "));
+    var divisao = valorConta / numeroPessoas;
+
     alert("O valor da conta, dividido para cada pessoa da mesa, é igual a: R$ " + divisao)
 };
 
 // 5-)
-var numero = 50;
-var resto = numero % 2;
-console.log("O número é par?: " + (resto == 0));
-
 function mostrarParImpar() {
-    alert("O número é par?: " + (resto == 0))
+    var numero = Number(prompt("Digite um número: "));
+    var resto = numero % 2;
+
+    if (resto == 0) {
+        alert("O número " + numero + " é par")
+    }
+    else {
+        alert("O número " + numero + " é ímpar")
+    }
 };
 
 // 6-)
-let num = 0;
 function mostrarIncremento() {
+    let num = 0;
+
     alert(num);
     num ++;
 }; 
 
 // 7-)
-let nume = 10;
 function mostrarDecremento() {
+    let nume = 10;
+
     alert(nume);
     nume --;
 };
 
 // 8-)
-var numero1 = 10;
-var numero2 = 10;
-console.log("Os números são iguais?: " + (numero1 == numero2));
-
 function mostrarResultadoIgualdade() {
-    alert("Os números são iguais?: " + (numero1 == numero2))
+    var numero1 = Number(prompt("Digite o 1° número: "));
+    var numero2 = Number(prompt("Digite o 2° número: "));
+
+    if (numero1 == numero2) {
+        alert("Os números são iguais")
+    }
+    else {
+        alert("Os números " + numero1 + " e " + numero2 + " são diferentes")
+    }
 };
 
 // 9-)
-var numero1 = 10;
-var numero2 = 15;
-console.log("Os números são iguais?: " + (numero1 != numero2));
-
 function mostrarResultadoDesigualdade() {
-    alert("Os números são diferentes?: " + (numero1 != numero2))
+    var numero1 = Number(prompt("Digite o 1° número: "));
+    var numero2 = Number(prompt("Digite o 2° número: "));
+
+    if (numero1 != numero2) {
+        alert("Os números " + numero1 + " e " + numero2 + " são diferentes")
+    }
+    else {
+        alert("Os números são iguais")
+    }
 };
 
 // 10-)
-var idadePessoa1 = 50;
-var idadePessoa2 = 49;
-console.log("A primeira pessoa é mais velha do que a segunda?: " + (idadePessoa1 > idadePessoa2));
-
 function mostrarComparacaoIdade() {
-    alert("A primeira pessoa é mais velha do que a segunda?: " + (idadePessoa1 > idadePessoa2))
+    var idadePessoa1 = Number(prompt("Digite a idade da 1° pessoa: "));
+    var idadePessoa2 = Number(prompt("Digite a idade da 2° pessoa: "));
+
+    if (idadePessoa1 > idadePessoa2) {
+        alert("A 1° pessoa é mais velha do que a 2° pessoa")
+    }
+    else if (idadePessoa1 == idadePessoa2) {
+        alert("As duas pessoas têm a mesma idade")
+    }
+    else {
+        alert("A 2° pessoa é mais velha do que a 1° pessoa")
+    }
 };
 
 // 11-)
-var valorProduto = 500;
-var valorOrcamento = 400;
-console.log("O valor do produto é menor do que o valor do orçamento?: " + (valorProduto < valorOrcamento));
-
 function mostrarComparacaoPreco() {
-    alert("O valor do produto é menor do que o valor do orçamento?: " + (valorProduto < valorOrcamento))
+    var valorProduto = Number(prompt("Digite o valor do produto: "));
+    var valorOrcamento = Number(prompt("Digite o valor do orçamento: "));
+
+    if (valorProduto < valorOrcamento) {
+        alert("É possível comprar o produto, pois o valor do produto é menor do que o valor do orçamento")
+    }
+    else {
+        alert("Não é possível comprar o produto, pois o valor do produto é maior do que o valor do orçamento")
+    }
 };
 
 // 12-) 
 function mostrarResultadoAprovacao() {
-    var nomeAluno = "Wagner";
-    var notaAluno = 8;
+    var nomeAluno = prompt("Digite o nome do aluno: ");
+    var notaAluno = Number(prompt("Digite a nota do aluno: "));
     media = 7;
 
     if (notaAluno >= media) {
-        alert("O aluno está aprovado")
+        alert("O aluno " + nomeAluno + " está aprovado")
     }
     else {
-        alert("O aluno está reprovado")
+        alert("O aluno " + nomeAluno + " está reprovado")
     }
 };
 
 // 13-)
 function mostrarMenoreIgual() {
-    var estoque = 500;
-    var quantPedido = 250;
+    var estoque = Number(prompt("Informe a quantidade em estoque: "));
+    var quantPedido = Number(prompt("Informe a quantidade do pedido: "));
 
     if (estoque >= quantPedido) {
         alert("O pedido pode ser atendido")
@@ -128,22 +148,22 @@ function mostrarMenoreIgual() {
 
 // 14-)
 function  mostrarResultadoVoto() {
-    var idade = 25;
-var titulo = true;
+    var idade = Number(prompt("Informe a idade: "));
+    var titulo = document.getElementById("temTitulo").checked;
 
-    if (idade >= 16 && titulo === true) {
-        alert("A pessoa pode votar")
-    }
+    if (idade >= 16 && titulo) {
+        alert("✅ Você pode votar!");
+    } 
     else {
-        alert("A pessoa não pode votar")
+        alert("❌ Você não pode votar, pois não possui idade ou título de eleitor");
     }
 };
 
 // 15-)
-var nota = 8;
-var presenca = 0.97
-
 function mostrarResultadoBolsa () {
+    var nota = Number(prompt("Digite a nota do aluno: "));
+    var presenca = Number(prompt("Digite a  porcentagem de presença do aluno: "));
+
     if (nota >= 9 || presenca >= 0.9) {
         alert("O aluno consegue a bolsa")
     }
@@ -157,12 +177,12 @@ function mostrarResultadoBolsa () {
 
 // 16-)
 function mostrarMedia() {
-    var nota1 = 9;
-    var nota2 = 7.5;
-    var nota3 = 8;
-    var media = (nota1 + nota2 +nota3) % 3;
+    var nota1 = Number(prompt("Digite a 1° nota: "));
+    var nota2 = Number(prompt("Digite a 2° nota: "));
+    var nota3 = Number(prompt("Digite a 3° nota: "));
+    var media = (nota1 + nota2 +nota3) / 3;
 
-    if (media <= 7) {
+    if (media >= 7) {
         alert("Aprovado")
     }
     else{
@@ -172,17 +192,19 @@ function mostrarMedia() {
 
 // 17-)
 function mostrarTemperatura() {
-    var C = 35;
+    var C = Number(prompt("Digite a temperatura em graus Celsius: "));
     var converTemp = (C*9/5) + 32
-    alert("A temperatura em Fahrenheit é igual a: " + converTemp + "°F")
+
+    alert("A temperatura " + C + " °C " + "em Fahrenheit é igual a: " + converTemp + "°F")
 
 };
 
 // 18-)
 function mostrarValorFinalCompra() {
-    var precoProduto = 157;
-    var porcentDesconto = 0.10;
+    var precoProduto = Number(prompt("Digite o valor do produto: "));
+    var porcentDesconto = Number(prompt("Digite a porcentagem de desconto: "));
     var valorDesconto = precoProduto * porcentDesconto;
+
     if (precoProduto > 100) {
         valorFinal = precoProduto - valorDesconto;
     }
@@ -190,34 +212,43 @@ function mostrarValorFinalCompra() {
         valorFinal = precoProduto;
     }
 
-    alert("O valor final do produto após o desconto é igual a: R$ " + valorFinal + ",00")
+    alert("O valor final do produto após o desconto é igual a: R$ " + valorFinal)
 };
 
 // 19-)
 function mostrarResultadoMultiplo() {
-    var numero = 15;
+    var numero = Number(prompt("Digite um número: "));
+
     if (numero % 5 == 0 && numero % 3 == 0) {
         alert("O número é múltiplo de 5 e 3")
     }
-    else {
-        alert("O número não é múltiplo de 5 ou 3")
+    else if (numero % 5 == 0) {
+        alert("O número " + numero + " é múltiplo apenas de 5")
+    }
+    else if (numero % 3 == 0) {
+        alert("O número " + numero + " é múltiplo apenas de 3")
+    }
+    else{
+        alert("O número " + numero + " não é múltiplo de 5 e nem de 3")
     }
 };
 
 // 20-)
 function mostrarResultadoIntervalo() {
-    var numero = 35;
+    var numero = Number(prompt("Digite um número: "));
+
     if (numero >= 10 && numero <= 50) {
-        alert("O número está entre 10 e 50")
+        alert("O número " + numero + " está entre 10 e 50")
     }
     else {
-        alert("O número não está entre 10 e 50")
+        alert("O número " + numero + " não está entre 10 e 50")
     }
 };
 
 // 21-)
 function mostrarAnoBissexto() {
     var ano = Number(prompt("Digite o ano: "));
+
     if (ano % 4 == 0) {
         alert("O ano " + ano + " é bissexto")
     }
@@ -232,7 +263,6 @@ function mostrarResultadoCalculadora() {
     var operador = prompt("Digite o operador: ");
     var numero2 = Number(prompt("Digite o segundo número: "));
 
-    console.log(numero1, operador, numero2);
     var resultado;
 
     if (operador == "+") {
@@ -262,11 +292,24 @@ function mostrarResultadoCalculadora() {
 // 23-)
 function mostrarResultadoSenha() {
     var senha = prompt("Digite a senha: ");
-    var temMaiscula = false;
+    var temMaiuscula = false;
     var temNumero = false;
+    var letrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var numeros = "1234567890";
 
-    if (senha.lenght >= 8){
-        alert("Senha válida")
+    for (var char of senha) { 
+        if (numeros.includes(char)) { 
+            temNumero = true;
+        }
+        if (letrasMaiusculas.includes(char)) {
+            temMaiuscula = true;
+        }
+    }
+
+    if (senha.length >= 8 && temNumero && temMaiuscula) { 
+        alert("Senha válida");
+    } else {
+        alert("Senha inválida");
     }
 };
 
@@ -328,17 +371,26 @@ function  mostrarNumerosOrdenados() {
     else if (numero3 < numero2 && numero2 < numero1) {
         alert("A ordem de forma crescente é igual a: " + numero3 + ", " + numero2 + ", " + numero1)
     }
+    else if (numero3 == numero2 && numero2 == numero1) {
+        alert("Os números são iguais")
+    }
     else if (numero3 < numero1 && numero1 < numero2) {
         alert("A ordem de forma crescente é igual a: " + numero3 + ", " + numero1 + ", " + numero2)
     }
     else if (numero1 < numero3 && numero3 < numero2) {
         alert("A ordem de forma crescente é igual a: " + numero1 + ", " + numero3 + ", " + numero2)
     }
+    else if (numero1 == numero3 && numero3 == numero2) {
+        alert("Os números são iguais")
+    }
     else if (numero1 < numero2 && numero2 < numero3) {
         alert("A ordem de forma crescente é igual a: " + numero1 + ", " + numero2 + ", " + numero3)
     }
     else if (numero2 < numero1 && numero1 < numero3) {
         alert("A ordem de forma crescente é igual a: " + numero2 + ", " + numero1 + ", " + numero3)
+    }
+    else if (numero2 == numero1 && numero1 == numero3) {
+        alert("Os números são iguais")
     }
 };
 
@@ -360,25 +412,25 @@ function mostrarRaízes() {
 };
 
 // 28-)
-function mostrarAdvinhação() {
-var numeroSorteado = Math.floor(Math.random () * 100) + 1;
-var tentativas = 0;
-var chute;
+function mostrarAdvinhacao() {
+    var numeroSorteado = Math.floor(Math.random () * 100) + 1;
+    var tentativas = 0;
+    var chute;
 
-do {
-    chute = Number(prompt("Digite um número: "));
-    tentativas++;
-    if (chute > numeroSorteado) {
-        alert("Chute muito alto!")
+    do {
+        chute = Number(prompt("Digite um número: "));
+        tentativas++;
+        if (chute > numeroSorteado) {
+            alert("Chute muito alto!")
+        }
+        else if(chute < numeroSorteado) {
+            alert("Chute muito baixo!")
+        }
     }
-    else if(chute < numeroSorteado) {
-        alert("Chute muito baixo!")
-    }
-}
 
-while (chute !== numeroSorteado);
+    while (chute !== numeroSorteado);
 
-alert("Parabéns!!!, você acertou o número em " + tentativas + " tentativas")
+    alert("Parabéns!!!, você acertou o número em " + tentativas + " tentativas")
 };
 
 // 29-)
@@ -401,7 +453,7 @@ function conversãoBases() {
 function calculadoraJurosCompostos() {
     var capital = Number(prompt("Informe o valor do capital: R$ "));
     var taxaJuros = Number(prompt("Informe a taxa de juros do investimento: "));
-    var meses = Number(prompt("Inform o tempo do investimento, em meses: "));
+    var meses = Number(prompt("Informe o tempo do investimento, em meses: "));
     
     var montante = capital * Math.pow((1 + taxaJuros), meses);
 
